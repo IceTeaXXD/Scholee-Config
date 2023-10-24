@@ -1,0 +1,36 @@
+version: '3.3'
+services:
+  client-webapp: ## React SPA
+    ports:
+      - 3000:3000
+    build:
+      context: ../client-webapp
+      dockerfile: Dockerfile
+
+  web-service: # PHP Web App
+    build:
+      context: ../web-service
+      dockerfile: Dockerfile
+    image: php:8.0-apache
+    volumes:
+      - "../web-service:/var/www/html"
+    ports:
+      - 3001:80
+
+  web-service-db: # PHP Web Services DB
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=scholee
+      - MYSQL_USER=scholee
+      - MYSQL_PASSWORD=password 
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+    volumes:
+      - "../web-service/db:/docker-entrypoint-initdb.d"
+
+  phpmyadmin: # PHPMyAdmin
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - 8001:80
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
