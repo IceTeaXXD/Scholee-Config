@@ -27,6 +27,21 @@ services:
     volumes:
       - "../web-service/db:/docker-entrypoint-initdb.d"
 
+  rest-service: 
+    build:
+      context: ../rest-service
+      dockerfile: Dockerfile
+    ports:
+      - 2510:2510
+
+  rest-service-db:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=scholeeadmin
+      - MYSQL_USER=scholeeadmin
+      - MYSQL_PASSWORD=password
+      - MYSQL_ALLOW_EMPTY_PASSWORD=1
+
   phpmyadmin: # PHPMyAdmin
     image: phpmyadmin/phpmyadmin
     ports:
