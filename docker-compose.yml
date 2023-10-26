@@ -27,21 +27,31 @@ services:
     volumes:
       - "../web-service/db:/docker-entrypoint-initdb.d"
 
-  rest-service: 
-    build:
+  rest-service-db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: scholeeadmin
+    volumes:
+      - "../rest-service/prisma/migrations/db:/docker-entrypoint-initdb.d"
+
+  rest-service:
+    image: node:latest
+    build: 
       context: ../rest-service
       dockerfile: Dockerfile
     ports:
-      - 2510:2510
-
-  rest-service-db:
-    image: mysql:latest
+      - 5000:5000
+    restart: always
+    depends_on:
+      - rest-service-db
     environment:
-      - MYSQL_DATABASE=scholeeadmin
-      - MYSQL_USER=scholeeadmin
-      - MYSQL_PASSWORD=password
-      - MYSQL_ALLOW_EMPTY_PASSWORD=1
-
+      DATABASE_URL: postgresql://postgres:password@rest-service-db:5432/scholeeadmin
+      
   phpmyadmin: # PHPMyAdmin
     image: phpmyadmin/phpmyadmin
     ports:
