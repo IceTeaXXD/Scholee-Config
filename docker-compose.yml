@@ -16,6 +16,8 @@ services:
       - "../web-service:/var/www/html"
     ports:
       - 3001:80
+    depends_on:
+      - web-service-db
 
   web-service-db: # PHP Web Services DB
     image: mysql:latest
