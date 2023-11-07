@@ -1,63 +1,33 @@
-version: '3.3'
 services:
-  client-webapp: ## React SPA
-    ports:
-      - 3000:3000
-    build:
-      context: ../client-webapp
-      dockerfile: Dockerfile
-
-  web-service: # PHP Web App
-    build:
-      context: ../web-service
-      dockerfile: Dockerfile
-    image: php:8.0-apache
-    volumes:
-      - "../web-service:/var/www/html"
-    ports:
-      - 3001:80
-    depends_on:
-      - web-service-db
-
-  web-service-db: # PHP Web Services DB
-    image: mysql:latest
-    environment:
-      - MYSQL_DATABASE=scholee
-      - MYSQL_USER=scholee
-      - MYSQL_PASSWORD=password 
-      - MYSQL_ALLOW_EMPTY_PASSWORD=1
-    volumes:
-      - "../web-service/db:/docker-entrypoint-initdb.d"
-
+  db:
+    extends: 
+      file: ../web-service/docker-compose.yml
+      service: db
+  php-apache:
+    extends: 
+      file: ../web-service/docker-compose.yml
+      service: php-apache
+  phpmyadmin:
+    extends: 
+      file: ../web-service/docker-compose.yml
+      service: phpmyadmin
+  soap-db:
+    extends: 
+      file: ../soap-service/docker-compose.yml
+      service: soap-db
+  soap-service:
+    extends: 
+      file: ../soap-service/docker-compose.yml
+      service: soap-service
   rest-service-db:
-    image: postgres:latest
-    restart: always
-    ports:
-      - 5432:5432
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: scholeeadmin
-    volumes:
-      - "../rest-service/prisma/migrations/db:/docker-entrypoint-initdb.d"
-
+    extends:
+      file: ../rest-service/docker-compose.yml
+      service: rest-service-db
   rest-service:
-    image: node:latest
-    build: 
-      context: ../rest-service
-      dockerfile: Dockerfile
-    ports:
-      - 5000:5000
-    restart: always
-    depends_on:
-      - rest-service-db
-    environment:
-      DATABASE_URL: postgresql://postgres:password@rest-service-db:5432/scholeeadmin
-      
-  phpmyadmin: # PHPMyAdmin
-    image: phpmyadmin/phpmyadmin
-    ports:
-      - 8001:80
-    environment:
-      - PMA_HOST=db
-      - PMA_PORT=3306
+    extends:
+      file: ../rest-service/docker-compose.yml
+      service: rest-service
+  client-webapp:
+    extends:
+      file: ../client-webapp/docker-compose.yml
+      service: client-webapp
