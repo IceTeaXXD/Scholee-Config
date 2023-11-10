@@ -1,16 +1,12 @@
 services:
-  db:
+  web-db:
     extends: 
       file: ../web-service/docker-compose.yml
-      service: db
-  php-apache:
+      service: web-db
+  web-service:
     extends: 
       file: ../web-service/docker-compose.yml
-      service: php-apache
-  phpmyadmin:
-    extends: 
-      file: ../web-service/docker-compose.yml
-      service: phpmyadmin
+      service: web-service
   soap-db:
     extends: 
       file: ../soap-service/docker-compose.yml
