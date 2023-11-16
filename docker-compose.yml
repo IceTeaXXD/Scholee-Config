@@ -27,3 +27,7 @@ services:
     extends:
       file: ../client-webapp/docker-compose.yml
       service: client-webapp
+  redis:
+    extends:
+      file: ../rest-service/docker-compose.yml
+      service: redis
