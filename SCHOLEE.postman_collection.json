@@ -1,0 +1,1503 @@
+{
+	"info": {
+		"_postman_id": "d6a6ce57-1684-4dfa-8acc-3102744813d5",
+		"name": "SCHOLEE",
+		"description": "Collection of API Endpoint Documentation for REST, SOAP, and Monolith services",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27059589",
+		"_collection_link": "https://galactic-moon-285796.postman.co/workspace/f0f702c6-70c1-476b-b4ae-17450edc2c3c/collection/27059589-d6a6ce57-1684-4dfa-8acc-3102744813d5?action=share&source=collection_link&creator=27059589"
+	},
+	"item": [
+		{
+			"name": "REST",
+			"item": [
+				{
+					"name": "Scholarship",
+					"item": [
+						{
+							"name": "Get All Scholarship",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/scholarship",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"scholarship"
+									]
+								},
+								"description": "\nThis API endpoint allows you to retrieve information about scholarships. It is an HTTP GET request to the URL `{{REST_URL}}/api/scholarship`.\n\n### Request Parameters\nThis endpoint does not require any request parameters.\n\n### Response\nThe response for this endpoint indicates the status of the request. In the last execution, the response had the following details:\n- Status: 401\n- Unauthorized\n\n### Error Handling\nIf the request is unauthorized, the server will return a status code of 401. This means that the user does not have the necessary permissions to access the scholarship information.\n\nPlease ensure that you have the proper authentication credentials and try again.\n\n"
+							},
+							"response": []
+						},
+						{
+							"name": "Get Scholarship by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/scholarship/1",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"scholarship",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Scholarship",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"organization_id\": 1,\r\n    \"title\": \"Mahentot Scholarship\",\r\n    \"description\": \"Swing swong spiderman\",\r\n    \"short_description\": \"hehe\",\r\n    \"coverage\": 100,\r\n    \"contact_name\": \"Peter Parker\",\r\n    \"contact_email\": \"PeterParker@example.com\",\r\n    \"type\":[\"i am\",\"spider\",\"man\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{REST_URL}}/api/scholarship",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"scholarship"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Scholarship",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"UPDATED TITLE\",\r\n    \"description\": \"Description.\",\r\n    \"short_description\": \"Short Description\",\r\n    \"coverage\": 1000,\r\n    \"contact_name\": \"KONTOL\",\r\n    \"contact_email\": \"maryjoe@example.com\",\r\n    \"type\": [\"edited1\",\"edit2\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{REST_URL}}/api/scholarship/1",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"scholarship",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Scholarship",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/scholarship/2",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"scholarship",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scholarship Acceptance",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id_student\": 1, \r\n    \"scholarship_id\": 1, \r\n    \"status\": \"accepted\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{REST_URL}}/api/setAcceptance",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"setAcceptance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scholarship Acceptance Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"user_id_student\": 1, \r\n    \"scholarship_id\": 1, \r\n    \"status\": \"accepted\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{REST_URL}}/api/setAcceptance",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"setAcceptance"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Scholarship Type",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/scholarshiptype",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"scholarshiptype"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Scholarship Count",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/scholarship/4/count",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"scholarship",
+										"4",
+										"count"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"description": "Scholarsip API Endpoints"
+				},
+				{
+					"name": "Organization",
+					"item": [
+						{
+							"name": "Get All Organization",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/organization",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"organization"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Organization by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/organization/1",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"organization",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Organization",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-KEY",
+										"value": "kunciT",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Emily May Foundation\",\r\n  \"email\": \"emf@oscorp.org\",\r\n  \"password\": \"securepassword\",\r\n  \"address\": \"123 Main St\",\r\n  \"organizationDescription\": \"Emily May Foundation is a organization created by Harry Osborn and co-founded by Peter Parker.\",\r\n  \"referral_code\": \"rAwJpcvN1/bc7X812kA7bQ==\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{REST_URL}}/api/organization",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"organization"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Organization",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"updated organization\",\r\n    \"email\": \"newemail@org.com\",\r\n    \"address\": \"new address\",\r\n    \"description\": \"new description\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{REST_URL}}/api/organization/1",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"organization",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Organization",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/organization/1",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"organization",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "University",
+					"item": [
+						{
+							"name": "Get All University",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJlbWFpbCI6Iml0YmJAaXRiLmFjLmlkIiwidXNlclR5cGUiOiJ1bml2ZXJzaXR5In0sImlhdCI6MTY5ODk4MjQ5NywiZXhwIjoxNjk5MDY4ODk3fQ.k_eDsJapkxe3-nsf1UVjCXGl-8FJIDzpG_1_zlRF8A4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{REST_URL}}/api/university",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"university"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get University by ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJlbWFpbCI6Iml0YmJAaXRiLmFjLmlkIiwidXNlclR5cGUiOiJ1bml2ZXJzaXR5In0sImlhdCI6MTY5ODk4MjQ5NywiZXhwIjoxNjk5MDY4ODk3fQ.k_eDsJapkxe3-nsf1UVjCXGl-8FJIDzpG_1_zlRF8A4",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{REST_URL}}/api/university/2",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"university",
+										"2"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create University",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJlbWFpbCI6Iml0YmJAaXRiLmFjLmlkIiwidXNlclR5cGUiOiJ1bml2ZXJzaXR5In0sImlhdCI6MTY5ODk4MjQ5NywiZXhwIjoxNjk5MDY4ODk3fQ.k_eDsJapkxe3-nsf1UVjCXGl-8FJIDzpG_1_zlRF8A4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Institut Teknologi Bandung\",\r\n  \"email\": \"itb@itb.ac.id\",\r\n  \"password\": \"securepassword\",\r\n  \"address\": \"123 Main St\",\r\n  \"universityDescription\": \"Institut Terkontol Bangsat\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{REST_URL}}/api/university",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"university"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update University",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Reini Gaming\",\r\n    \"email\": \"newemaillmao@org.itb\",\r\n    \"address\": \"bandumg bro\",\r\n    \"description\": \"lmao uf uff\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{REST_URL}}/api/university/3",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"university",
+										"3"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete University",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/university/3",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"university",
+										"3"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"emf@oscorp.org\",\n    \"password\": \"securepassword\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{REST_URL}}/api/login",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/logout",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Roles",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJlbWFpbCI6Iml0YkBpdGIuYWMuaWQiLCJyb2xlcyI6InVuaXZlcnNpdHkifSwiaWF0IjoxNjk5NTg0NjUwLCJleHAiOjE2OTk1ODQ3MTB9.PvujHdfvsizhtMgYBmX7FvVUumOM4GnF8xafYEQyXAY",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{REST_URL}}/api/roles",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Auth",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJlbWFpbCI6Iml0YkBpdGIuYWMuaWQiLCJ1c2VyVHlwZSI6InVuaXZlcnNpdHkifSwiaWF0IjoxNjk5MjY1OTU4LCJleHAiOjE2OTkyNjY1NTh9.6ZZiu-g4a8yziWTRDC6ehWSbW0ztP5yLYYn7YyCcnZI\n",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "html"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{REST_URL}}/api/refresh",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"refresh"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Assignment",
+					"item": [
+						{
+							"name": "Get Assignment by SID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/assignment/4",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"assignment",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Assignment",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"organization_id\": 2,\r\n    \"scholarship_id\": 1,\r\n    \"name\": \"Third Assignment\",\r\n    \"description\": \"Aku mau kalian semua untuk submit file PDF berisikan video YouTube dan telah kalian kompresi menjadi sesuatu hahaha\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{REST_URL}}/api/assignment/create",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"assignment",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Assignments By SID and AID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/assignment/4/1",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"assignment",
+										"4",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/scholarship/assignment/upload",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"scholarship",
+										"assignment",
+										"upload"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Files",
+					"item": [
+						{
+							"name": "Upload File",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"uid\": 12,\r\n    \"file_path\": \"VideoBokep.mp4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{REST_URL}}/api/files/scholarship/:sid/assignment/:aid",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"files",
+										"scholarship",
+										":sid",
+										"assignment",
+										":aid"
+									],
+									"variable": [
+										{
+											"key": "sid",
+											"value": "4"
+										},
+										{
+											"key": "aid",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Doc of Assignment",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/files/scholarship/:sid/assignment/:aid",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"files",
+										"scholarship",
+										":sid",
+										"assignment",
+										":aid"
+									],
+									"variable": [
+										{
+											"key": "sid",
+											"value": "4"
+										},
+										{
+											"key": "aid",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Doc  of Assignment of A USer",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/files/scholarship/:sid/assignment/:aid/file/:fid/user/:uid",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"files",
+										"scholarship",
+										":sid",
+										"assignment",
+										":aid",
+										"file",
+										":fid",
+										"user",
+										":uid"
+									],
+									"variable": [
+										{
+											"key": "sid",
+											"value": "4"
+										},
+										{
+											"key": "aid",
+											"value": "1"
+										},
+										{
+											"key": "fid",
+											"value": "1"
+										},
+										{
+											"key": "uid",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Student",
+					"item": [
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/user/4",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"4"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request Copy",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{REST_URL}}/api/user/4",
+									"host": [
+										"{{REST_URL}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Home",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{REST_URL}}",
+							"host": [
+								"{{REST_URL}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "REST Services"
+		},
+		{
+			"name": "SOAP",
+			"item": [
+				{
+					"name": "Student Service",
+					"item": [
+						{
+							"name": "registerStudent",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/xml",
+										"type": "text"
+									},
+									{
+										"key": "X-API-KEY",
+										"value": "shortT_Key",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <Body>\n        <registerStudent xmlns=\"http://services.soap.orden.com/\">\n            <user_id xmlns=\"\">1</user_id>\n            <rest_uni_id xmlns=\"\">1</rest_uni_id>\n            <php_uni_id xmlns=\"\">-1</php_uni_id>\n        </registerStudent>\n    </Body>\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SOAP_URL}}/ws/StudentService?wsdl",
+									"host": [
+										"{{SOAP_URL}}"
+									],
+									"path": [
+										"ws",
+										"StudentService"
+									],
+									"query": [
+										{
+											"key": "wsdl",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "University Service",
+					"item": [
+						{
+							"name": "createUniversity",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "shortT_Key",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "text/xml; charset=utf-8",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <Body>\n        <createUniversity xmlns=\"http://services.soap.orden.com/\">\n            <rest_uni_id xmlns=\"\">1</rest_uni_id>\n            <university_name xmlns=\"\">ITB</university_name>\n        </createUniversity>\n    </Body>\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SOAP_URL}}/ws/UniversityService?wsdl",
+									"host": [
+										"{{SOAP_URL}}"
+									],
+									"path": [
+										"ws",
+										"UniversityService"
+									],
+									"query": [
+										{
+											"key": "wsdl",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "setPHPId",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/xml",
+										"type": "text"
+									},
+									{
+										"key": "API-KEY",
+										"value": "shortT_Key",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <Body>\n        <setPHPId xmlns=\"http://services.soap.orden.com/\">\n            <php_uni_id xmlns=\"\">1</php_uni_id>\n            <rest_uni_id xmlns=\"\">2</rest_uni_id>\n        </setPHPId>\n    </Body>\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SOAP_URL}}/ws/UniversityService?wsdl",
+									"host": [
+										"{{SOAP_URL}}"
+									],
+									"path": [
+										"ws",
+										"UniversityService"
+									],
+									"query": [
+										{
+											"key": "wsdl",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllUniversities",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <getAllUniversities xmlns=\"http://services.soap.orden.com/\"/>\r\n    </Body>\r\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SOAP_URL}}/ws/UniversityService?wsdl",
+									"host": [
+										"{{SOAP_URL}}"
+									],
+									"path": [
+										"ws",
+										"UniversityService"
+									],
+									"query": [
+										{
+											"key": "wsdl",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Organization Registration",
+					"item": [
+						{
+							"name": "registerOrganization",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "shortT_Key",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "text/xml",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <registerOrganization xmlns=\"http://services.soap.orden.com/\">\r\n            <org_id_php xmlns=\"\">1</org_id_php>\r\n        </registerOrganization>\r\n    </Body>\r\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SOAP_URL}}/ws/OrganizationRegistration?wsdl",
+									"host": [
+										"{{SOAP_URL}}"
+									],
+									"path": [
+										"ws",
+										"OrganizationRegistration"
+									],
+									"query": [
+										{
+											"key": "wsdl",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "createRESTId",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <createRESTId xmlns=\"http://services.soap.orden.com/\">\r\n            <org_id_rest xmlns=\"\">1</org_id_rest>\r\n            <referral_code xmlns=\"\">abcdefghijklm</referral_code>\r\n        </createRESTId>\r\n    </Body>\r\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SOAP_URL}}/ws/OrganizationRegistration?wsdl",
+									"host": [
+										"{{SOAP_URL}}"
+									],
+									"path": [
+										"ws",
+										"OrganizationRegistration"
+									],
+									"query": [
+										{
+											"key": "wsdl",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "validateReferralCode",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <validateReferralCode xmlns=\"http://services.soap.orden.com/\">\r\n            <referral_code xmlns=\"\">abcdefgh</referral_code>\r\n        </validateReferralCode>\r\n    </Body>\r\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SOAP_URL}}/ws/OrganizationRegistration?wsdl",
+									"host": [
+										"{{SOAP_URL}}"
+									],
+									"path": [
+										"ws",
+										"OrganizationRegistration"
+									],
+									"query": [
+										{
+											"key": "wsdl",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Scholarship Registration",
+					"item": [
+						{
+							"name": "ScholarshipRegister",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "API-KEY",
+										"value": "shortT_Key",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "text/xml",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <registerScholarship xmlns=\"http://services.soap.orden.com/\">\r\n            <user_id_scholarship_php xmlns=\"\">1</user_id_scholarship_php>\r\n            <scholarship_id_php xmlns=\"\">1</scholarship_id_php>\r\n        </registerScholarship>\r\n    </Body>\r\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SOAP_URL}}/ws/ScholarshipService",
+									"host": [
+										"{{SOAP_URL}}"
+									],
+									"path": [
+										"ws",
+										"ScholarshipService"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ScholarshipApplication",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/xml",
+										"type": "text"
+									},
+									{
+										"key": "API-KEY",
+										"value": "shortT_Key",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <registerScholarshipApplication xmlns=\"http://services.soap.orden.com/\">\r\n            <user_id_student xmlns=\"\">1</user_id_student>\r\n            <user_id_scholarship xmlns=\"\">1</user_id_scholarship>\r\n            <scholarship_id xmlns=\"\">1</scholarship_id>\r\n        </registerScholarshipApplication>\r\n    </Body>\r\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SOAP_URL}}/ws/ScholarshipAcceptanceService",
+									"host": [
+										"{{SOAP_URL}}"
+									],
+									"path": [
+										"ws",
+										"ScholarshipAcceptanceService"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ScholarshipApplication Copy",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"content-type": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "text/xml",
+										"type": "text"
+									},
+									{
+										"key": "API-KEY",
+										"value": "shortT_Key",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <test xmlns=\"http://services.soap.orden.com/\">\r\n        </test  >\r\n    </Body>\r\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SOAP_URL}}/ws/ScholarshipAcceptanceService",
+									"host": [
+										"{{SOAP_URL}}"
+									],
+									"path": [
+										"ws",
+										"ScholarshipAcceptanceService"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Scholarship Service",
+					"item": [
+						{
+							"name": "registerScholarship",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-KEY",
+										"value": "kunciT",
+										"type": "text"
+									},
+									{
+										"key": "SOAPAction",
+										"value": "http://services.soap.orden.com/ScholarshipService/getAllScholarshipRequest",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "text/xml",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <Body>\n        <registerScholarship xmlns=\"http://services.soap.orden.com/\">\n            <user_id_scholarship_php xmlns=\"\">1</user_id_scholarship_php>\n            <scholarship_id_php xmlns=\"\">2</scholarship_id_php>\n        </registerScholarship>\n    </Body>\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SOAP_URL}}/ws/ScholarshipService?wsdl",
+									"host": [
+										"{{SOAP_URL}}"
+									],
+									"path": [
+										"ws",
+										"ScholarshipService"
+									],
+									"query": [
+										{
+											"key": "wsdl",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "setRESTscholarshipID",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-KEY",
+										"value": "kunciT",
+										"type": "text"
+									},
+									{
+										"key": "SOAPAction",
+										"value": "http://services.soap.orden.com/ScholarshipService/getAllScholarshipRequest",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "text/xml",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\n    <Body>\n        <setRESTscholarshipID xmlns=\"http://services.soap.orden.com/\">\n            <user_id_scholarship_php xmlns=\"\">1</user_id_scholarship_php>\n            <scholarship_id_php xmlns=\"\">2</scholarship_id_php>\n            <user_id_scholarship_rest xmlns=\"\">1</user_id_scholarship_rest>\n            <scholarship_id_rest xmlns=\"\">1</scholarship_id_rest>\n        </setRESTscholarshipID>\n    </Body>\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SOAP_URL}}/ws/ScholarshipService?wsdl",
+									"host": [
+										"{{SOAP_URL}}"
+									],
+									"path": [
+										"ws",
+										"ScholarshipService"
+									],
+									"query": [
+										{
+											"key": "wsdl",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAllScholarship",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-KEY",
+										"value": "shortT_Key",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <getAllScholarship xmlns=\"http://services.soap.orden.com/\"/>\r\n    </Body>\r\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "addScholarshipView",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "<Envelope xmlns=\"http://schemas.xmlsoap.org/soap/envelope/\">\r\n    <Body>\r\n        <addScholarshipView xmlns=\"http://services.soap.orden.com/\">\r\n            <user_id_scholarship_php xmlns=\"\">1</user_id_scholarship_php>\r\n            <scholarship_id_php xmlns=\"\">2</scholarship_id_php>\r\n        </addScholarshipView>\r\n    </Body>\r\n</Envelope>",
+									"options": {
+										"raw": {
+											"language": "xml"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{SOAP_URL}}/ws/ScholarshipService?wsdl",
+									"host": [
+										"{{SOAP_URL}}"
+									],
+									"path": [
+										"ws",
+										"ScholarshipService"
+									],
+									"query": [
+										{
+											"key": "wsdl",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Scholarship Acc",
+					"item": [
+						{
+							"name": "Get Student",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PHP",
+			"item": [
+				{
+					"name": "New request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
